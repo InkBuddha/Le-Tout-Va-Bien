@@ -1,0 +1,30 @@
+/* Universal */
+@import url(https://fonts.googleapis.com/css?family=Pinyon+Script);
+.center {text-align: center;}
+.right {text-align: right;}
+.left {text-align: left;}
+
+/* Content */
+#logo {
+	float: left;
+	font-family: 'Pinyon Script', cursive;
+	font-size: 5em;
+	margin-right: 2em;
+	// padding-top: 0.5em;	
+	text-transform: uppercase;
+	&:hover {
+		color: blue;
+		text-decoration: none;
+	}
+}
+
+header {
+	li { font-size: 1.5em;}
+}
+
+.jumbotron {height: 30em;}
+
+footer {
+	background-color: #151515;
+	color: #fff;
+}
