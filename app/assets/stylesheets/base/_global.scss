@@ -1,16 +1,51 @@
 /* Universal */
+
+// Typo
 @import url(https://fonts.googleapis.com/css?family=Pinyon+Script);
+
+// Mixins
+@mixin box_shadow {
+	-webkit-box-shadow: 0px 3px 7px -1px rgba(0,0,0,0.30);
+	-moz-box-shadow: 0px 3px 7px -1px rgba(0,0,0,0.30);
+	box-shadow: 0px 3px 7px -1px rgba(0,0,0,0.30);
+}
+
+// @mixin bg_size_cover {
+// 	-webkit-background-size: cover;
+// 	-moz-background-size: 	 cover;
+// 	-ms-background-size: 	 	 cover;
+// 	-o-background-size: 		 cover;
+// 	background-size:  			 cover;
+// }
+
+//Misc
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	/* Margin bottom = footer height */
+	// margin-bottom: 5em;
+}
+
+section {margin: 0; padding: 0;}
+
+.container {
+	width: 100%;
+}
+
 .center {text-align: center;}
 .right {text-align: right;}
 .left {text-align: left;}
 
-/* Content */
+/* Layouts */
+// Top Nav
 #logo {
 	float: left;
 	font-family: 'Pinyon Script', cursive;
-	font-size: 5em;
+	font-size: 3em;
 	margin-right: 2em;
-	// padding-top: 0.5em;	
 	text-transform: uppercase;
 	&:hover {
 		color: blue;
@@ -19,12 +54,37 @@
 }
 
 header {
+	@include box_shadow;
 	li { font-size: 1.5em;}
 }
 
-.jumbotron {height: 30em;}
-
+// Footer
 footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 5vh;
 	background-color: #151515;
 	color: #fff;
+	font-size: 0.8em;
+	padding: 1.5em;
+	ul {
+		list-style: none;
+	}
 }
+
+/* Content */
+
+.side-photo {
+	img {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0 !important;
+	padding: 0;
+	height: 89vh;
+	overflow: hidden;
+	}
+}	
+
