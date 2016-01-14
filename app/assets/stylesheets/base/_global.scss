@@ -3,21 +3,6 @@
 // Typo
 @import url(https://fonts.googleapis.com/css?family=Pinyon+Script);
 
-// Mixins
-@mixin box_shadow {
-	-webkit-box-shadow: 0px 3px 7px -1px rgba(0,0,0,0.30);
-	-moz-box-shadow: 0px 3px 7px -1px rgba(0,0,0,0.30);
-	box-shadow: 0px 3px 7px -1px rgba(0,0,0,0.30);
-}
-
-// @mixin bg_size_cover {
-// 	-webkit-background-size: cover;
-// 	-moz-background-size: 	 cover;
-// 	-ms-background-size: 	 	 cover;
-// 	-o-background-size: 		 cover;
-// 	background-size:  			 cover;
-// }
-
 //Misc
 html {
 	position: relative;
@@ -40,6 +25,15 @@ section {margin: 0; padding: 0;}
 .left {text-align: left;}
 
 /* Layouts */
+
+body.homepage {
+	@include bg_size_cover;
+	background-image: url(agen.jpg);
+	background-repeat: no-repeat;
+	background-position: center center fixed;
+	height: 89vh;
+}
+
 // Top Nav
 #logo {
 	float: left;
@@ -53,9 +47,14 @@ section {margin: 0; padding: 0;}
 	}
 }
 
-header {
+header#regular-nav {
 	@include box_shadow;
 	li { font-size: 1.5em;}
+}
+
+header#home-nav {
+	li { font-size: 1.5em;}
+	a {color: white;}
 }
 
 // Footer
@@ -78,10 +77,9 @@ footer {
 
 .side-photo {
 	img {
-	height: 100%;
 	width: 100%;
 	position: absolute;
-	left: 0 !important;
+	left: 0;
 	padding: 0;
 	height: 89vh;
 	overflow: hidden;

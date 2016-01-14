@@ -1,0 +1,14 @@
+// Mixins
+@mixin box_shadow {
+	-webkit-box-shadow: 0px 3px 7px -1px rgba(0,0,0,0.30);
+	-moz-box-shadow: 0px 3px 7px -1px rgba(0,0,0,0.30);
+	box-shadow: 0px 3px 7px -1px rgba(0,0,0,0.30);
+}
+
+@mixin bg_size_cover {
+	-webkit-background-size: cover;
+	-moz-background-size: 	 cover;
+	-ms-background-size: 	 	 cover;
+	-o-background-size: 		 cover;
+	background-size:  			 cover;
+}
