@@ -3,15 +3,12 @@
 // Typo
 @import url(https://fonts.googleapis.com/css?family=Pinyon+Script);
 
+h1 {text-align: center}
+
 //Misc
 html {
 	position: relative;
 	min-height: 100%;
-}
-
-body {
-	/* Margin bottom = footer height */
-	// margin-bottom: 5em;
 }
 
 section {margin: 0; padding: 0;}
@@ -47,14 +44,47 @@ body.homepage {
 	}
 }
 
+header .container {
+	width: 90%;
+	ul.nav a:hover, 
+	ul.nav a:focus,
+	ul.nav a:active {
+		background: transparent;
+		background-color: transparent;
+	}
+}
+
 header#regular-nav {
 	@include box_shadow;
 	li { font-size: 1.5em;}
+	a { color: #c68642;}
+	li.active a {
+		background: transparent;
+		background-color: transparent;
+		color: #8d5524;
+	}
+  .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+  	color: #8d5524;
+    background-color: white;
+	}
 }
 
 header#home-nav {
 	li { font-size: 1.5em;}
+	li.active {
+		border-bottom-style: solid;
+		border-bottom-color: white;
+	}
 	a {color: white;}
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a,
+	.navbar-default .navbar-nav .open .dropdown-menu {
+		background: transparent;
+  }
+  .dropdown-menu {
+  	border: none;
+  	background:transparent;
+  	box-shadow: none;
+  }
 }
 
 // Footer
@@ -62,7 +92,6 @@ footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	/* Set the fixed height of the footer here */
 	height: 5vh;
 	background-color: #151515;
 	color: #fff;
@@ -73,7 +102,18 @@ footer {
 	}
 }
 
+#home-footer {
+	background: transparent;
+	background-color: transparent;
+}
+
 /* Content */
+
+#description {
+	color: white;
+	background-color: blue;
+	h1, p.icon { text-align: center;}
+}
 
 .side-photo {
 	img {
@@ -84,5 +124,10 @@ footer {
 	height: 89vh;
 	overflow: hidden;
 	}
-}	
+}
+
+aside {
+	height: 89vh;
+	overflow: auto;
+}
 

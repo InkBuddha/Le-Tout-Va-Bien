@@ -11,6 +11,9 @@ class PagesController < ApplicationController
   def access
   end
 
+  def tarifs
+  end
+
   def links
   end
 end
