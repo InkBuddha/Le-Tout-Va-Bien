@@ -34,6 +34,16 @@
 		<p>Du lundi au vendredi de 7h à 10h
 		Samedi et dimanche de 8h à 10h</p>
 	</section>
+	
+	<hr>
+	
+	<section class="buttons">
+		<%= link_to 'Reserver', new_reservation_path, remote: true, class: 'btn btn-primary' %>
+		<%= link_to 'Tarifs', tarifs_path, remote: true, class: 'btn btn-primary' %>
+	</section>
 </aside>
+
+<div id="reservation-modal" class="modal fade"></div>
+<div id="tarifs-modal" class="modal fade"></div>
 
 

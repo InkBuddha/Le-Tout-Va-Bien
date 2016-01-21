@@ -8,7 +8,7 @@ class ReservationsController < ApplicationController
 
   	if @reservation.valid?
       ReservationMailer.message_me(@reservation).deliver_now
-      flash.now[:success] = "Merci, nous vous contacterons dès que possible"
+      flash[:success] = "Merci, nous vous contacterons dès que possible"
   		redirect_to new_reservation_path
   	else
   		render :new

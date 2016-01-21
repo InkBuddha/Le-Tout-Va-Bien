@@ -1,0 +1,102 @@
+<div class="modal-dialog modal-lg">
+	<div class="modal-content">
+		<div class="modal-header">
+				<h1>Demande de réservation</h1>
+			</div>
+		<div class="modal-body">
+			<section id="reservation">			
+				<%= form_for @reservation, remote: true, html: {style: "display:inline;"} do |f| %>
+					
+					<%= render 'flash' %>
+					<%= render 'error_explanation' %>
+			
+				
+					<div class="row">
+						<div class="form-group col-md-6">
+							<%= f.label :"Nom:", class: 'control-label' %>
+							<%= f.text_field :lastname, class: 'form-control' %>				
+						</div>
+						<div class="form-group col-md-6">
+							<%= f.label :"Prénom:", class: 'control-label' %>
+							<%= f.text_field :firstname, class: 'form-control' %>
+						</div>
+					</div>						
+						<div class="form-group">
+							<%= f.label :"Addresse:", class: 'control-label' %>
+							<%= f.text_field :address, class: 'form-control' %>
+						</div>
+					<div class="row">
+						<div class="form-group col-md-4">
+							<%= f.label :"Code Postal:", class: 'control-label' %>
+							<%= f.number_field :zipcode, class: 'form-control' %>
+						</div>
+						<div class="form-group col-md-8">
+							<%= f.label :"Ville:", class: 'control-label' %>
+							<%= f.text_field :city, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-8">					
+							<%= f.label :'E-mail:', class: 'control-label' %>
+							<%= f.email_field :email, class: 'form-control' %>
+						</div>
+						<div class="form-group col-md-4">
+							<%= f.label :"Téléphone:", class: 'control-label' %>
+							<%= f.phone_field :phone, class: 'form-control' %>
+						</div>
+					</div>				
+					<div class="row">
+						<div class="form-group col-md-6">
+							<%= f.label :"Date d'arrivée:", class: 'control-label' %>
+							<%= f.date_field :arrival, class: 'form-control' %>
+						</div>
+						<div class="form-group col-md-6">
+							<%= f.label :"Date de départ:", class: 'control-label' %>
+							<%= f.date_field :departure, class: 'form-control' %>
+						</div>
+					</div>					
+						<div class="form-group">
+							<%= f.label :"Nombre de personne par chambre:", class: 'control-label' %> <br>
+							<%= f.label :howmany do %>
+								<%= f.radio_button :howmany, 1 %> 1
+							<% end %>
+							<%= f.label :howmany do %>
+								<%= f.radio_button :howmany, 2 %> 2
+							<% end %>
+							<%= f.label :howmany do %>
+								<%= f.radio_button :howmany, 3 %> 3
+							<% end %>						
+						</div>
+						<div class="form-group">
+							<%= f.label :"Remarques:", class: 'control-label' %>
+							<%= f.text_area :comment, class: 'form-control' %>
+						</div>
+						<div class="action">
+							<%= f.submit 'Envoyer', class: 'btn btn-primary' %>						
+						</div>
+				<% end %>
+			</section>
+			<hr>
+
+			<section>
+				<h3>Conditions</h3>
+
+				<p>Arrivée : 15:00 - 19:00 heures <small>(arrivée tardive nous consulter)</small></p>
+				<p>Départ : 07:00 - 11:00 heures</p>
+				<p>Toute prolongation doit être approuvée au préalable à la réception, sinon la chambre vous sera comptée une nuit supplémentaire.)</p> 
+			</section>
+
+			<hr>
+
+			<section>
+				<h3>Annulation/prepaiement :</h3>
+				<p>Toute annulation, si celle ci est faite 24h avant votre arrivée, ne vous sera pas compté. Dans tout autre cas, il vous sera facturé la totalité de la nuitée.</p>
+			</section>
+
+			<div class="modal-footer">
+				<%= link_to "Retour", "#", class: "btn btn-default", data: {dismiss: "modal"} %>
+			</div>									
+		</div>				
+	</div>
+</div>
+		

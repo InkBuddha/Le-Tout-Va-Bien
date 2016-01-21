@@ -4,20 +4,12 @@
 		<nav>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
-				<li class='dropdown'>
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Présentations <b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li class="<%= 'active' if current_page?(hotel_presentation_path) %>"><%= link_to "Hotel", hotel_presentation_path %></li>
-						<li class="<%= 'active' if current_page?(restaurant_presentation_path) %>"><%= link_to "Restaurant", restaurant_presentation_path %></li>
-					</ul>
-				</li>
-				<li class='dropdown'>
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Réservations <b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><%= link_to "Chambre", new_reservation_path %></li>
-						<li class="<%= 'active' if current_page?(tarifs_path) %>"><%= link_to "Tarifs", tarifs_path %></li>
-					</ul>
-				</li>					
+				
+					
+				<li class="<%= 'active' if current_page?(hotel_presentation_path) %>"><%= link_to "L'hotel", hotel_presentation_path %></li>
+				<li class="<%= 'active' if current_page?(restaurant_presentation_path) %>"><%= link_to "Le restaurant", restaurant_presentation_path %></li>
+
+				
 				<li class="<%= 'active' if current_page?(access_path) %>"><%= link_to "Accès et Contacts", access_path %></li>
 				<li class="<%= 'active' if current_page?(links_path) %>"><%= link_to "Tourisme", links_path %></li>
 			</ul>

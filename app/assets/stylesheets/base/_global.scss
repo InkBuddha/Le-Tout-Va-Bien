@@ -1,15 +1,19 @@
 /* Universal */
 
 // Typo
-@import url(https://fonts.googleapis.com/css?family=Pinyon+Script);
+// @import url(https://fonts.googleapis.com/css?family=Pinyon+Script);
+@import url(https://fonts.googleapis.com/css?family=Pinyon+Script|Cardo|Cantata+One|Neuton|Raleway:500);
 
-h1 {text-align: center}
+h1, h2, h3, h5, h6 {text-align: center;}
+h1, h2, h3, h4, h5, h6 {font-family: $navfont;}
 
 //Misc
 html {
 	position: relative;
-	min-height: 100%;
+	min-height: 100%;	
 }
+
+body {color: $firstcolor;}
 
 section {margin: 0; padding: 0;}
 
@@ -21,6 +25,18 @@ section {margin: 0; padding: 0;}
 .right {text-align: right;}
 .left {text-align: left;}
 
+.btn-primary {
+	background-color: $firstcolor;
+	border: none;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active, {
+	background-color: $secondcolor;
+	border: none;
+}
+
 /* Layouts */
 
 body.homepage {
@@ -30,22 +46,27 @@ body.homepage {
 	background-position: center center fixed;
 	height: 89vh;
 	h1 {
-		font-family: 'Pinyon Script', cursive;
+		font-family: $logofont;
 		font-size: 4em;
 	}
-	span { padding-left: 10px; padding-right: 10px;}
+	span { padding-left: 10px; padding-right: 10px; font-size: 2em;}
 }
 
 // Top Nav
 #logo {
 	float: left;
-	font-family: 'Pinyon Script', cursive;
+	font-family: $logofont;
 	font-size: 3em;
 	margin-right: 2em;
 	text-transform: uppercase;
 	&:hover {
 		text-decoration: none;
 	}
+}
+
+header {
+	text-transform: uppercase;
+	font-family: $navfont;
 }
 
 header .container {
@@ -60,21 +81,19 @@ header .container {
 
 header#regular-nav {
 	@include box_shadow;
-	li { font-size: 1.5em;}
-	a { color: #c68642;}
+	a { color:$secondcolor;}
 	li.active a {
 		background: transparent;
 		background-color: transparent;
-		color: #8d5524;
+		color: $firstcolor;
 	}
   .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-  	color: #8d5524;
+  	color: $firstcolor;
     background-color: white;
 	}
 }
 
 header#home-nav {
-	li { font-size: 1.5em;}
 	li.active {
 		border-bottom-style: solid;
 		border-bottom-color: white;
@@ -111,16 +130,21 @@ footer {
 	background-color: transparent;
 }
 
-#error-explanation {
-	h2 {text-align: center;}
-	
-}
 /* Content */
 
 #description {
 	color: white;
-	background-color: blue;
-	h1, p.icon { text-align: center;}
+	position: absolute;
+	top: 25%;
+	h1, p, p.icon { text-align: center;}
+}
+
+.buttons {
+	text-align: center;
+	.btn {
+		margin-left: 1em;
+		margin-right: 1em;
+	}
 }
 
 .side-photo {
@@ -144,5 +168,10 @@ footer {
 aside {
 	height: 89vh;
 	overflow: auto;
+	section {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	
 }
 
