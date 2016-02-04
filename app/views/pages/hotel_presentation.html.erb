@@ -1,11 +1,11 @@
 <% provide(:title, 'Hotel') %>
 <% content_for(:nav_id, 'regular-nav') %>
 
-
-<section class="col-md-8 side-photo">
+<div class="row">
+<section class="col-md-8 col-sm-12 side-photo">
 	<%= image_tag("pillows.jpg") %>
 </section>
-<aside class="col-md-4">
+<aside class="col-md-4 col-sm-12">
 	<h1>Nos chambres</h1>
 	<section>	
 		<h3>21 chambres à votre disposition.</h3>
@@ -14,7 +14,7 @@
 
 	<hr>
 
-	<section class="services">
+	<section>
 		<h3>Services gratuits à votre disposition:</h3>
 		<ul>
 			<li>Connection wifi dans tout l’hôtel.</li>
@@ -25,7 +25,7 @@
 
 	<hr>
 
-	<section class="opening">
+	<section>
 		<h3>Horaires d'ouverture:</h3>
 		<p>du lundi au vendredi de 7h à 21 h
 		Permanence le Weekend (nous consulter)</p>
@@ -42,7 +42,7 @@
 		<%= link_to 'Tarifs', tarifs_path, remote: true, class: 'btn btn-primary' %>
 	</section>
 </aside>
-
+</div>
 <div id="reservation-modal" class="modal fade"></div>
 <div id="tarifs-modal" class="modal fade"></div>
 

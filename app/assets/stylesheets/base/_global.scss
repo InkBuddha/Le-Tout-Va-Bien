@@ -13,6 +13,12 @@ html {
 	min-height: 100%;	
 }
 
+.container-fluid, .row {
+	width: 100%; 
+	margin: 0; 
+	padding: 0;
+}
+
 body {color: $firstcolor;}
 
 section {margin: 0; padding: 0;}
@@ -42,9 +48,11 @@ section {margin: 0; padding: 0;}
 body.homepage {
 	@include bg_size_cover;
 	background-image: url(agen.jpg);
+	background-color: #c68642;
 	background-repeat: no-repeat;
 	background-position: center center fixed;
-	height: 89vh;
+	// background: url(agen.jpg) #c68642 no-repeat center center fixed;
+	min-height: 100%;
 	h1 {
 		font-family: $logofont;
 		font-size: 4em;
@@ -69,8 +77,10 @@ header {
 	font-family: $navfont;
 }
 
-header .container {
-	width: 90%;
+header {
+	width: 100%;
+	padding-right: 5%;
+	padding-left: 5%;
 	ul.nav a:hover, 
 	ul.nav a:focus,
 	ul.nav a:active {
@@ -87,7 +97,9 @@ header#regular-nav {
 		background-color: transparent;
 		color: $firstcolor;
 	}
-  .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+  .dropdown-menu > .active > a, 
+  .dropdown-menu > .active > a:hover, 
+  .dropdown-menu > .active > a:focus {
   	color: $firstcolor;
     background-color: white;
 	}
@@ -112,7 +124,7 @@ header#home-nav {
 
 // Footer
 footer {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
 	height: 5vh;
@@ -154,7 +166,7 @@ footer {
 	left: 0;
 	padding: 0;
 	height: 89vh;
-	overflow: hidden;
+	overflow: none;
 	}
 }
 
@@ -166,12 +178,55 @@ footer {
 }
 
 aside {
-	height: 89vh;
+	min-height: 89vh;
 	overflow: auto;
 	section {
 		padding-left: 10%;
 		padding-right: 10%;
 	}
 	
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1400px ) {
+	.side-photo img {
+		height: 89vh;
+		overflow: none;
+	}
+	aside {
+		height: 85vh;
+		overflow: auto;
+		section:last-child {margin-bottom: 1.5em;}
+	}
+	footer {
+		height: 7vh;
+		padding: 1em;
+	}
+}
+
+@media screen and (max-width: 991px ) {
+	.col-sm-12 {
+		padding: 0;
+	}
+	aside {
+		height: 75vh;
+	}
+	.side-photo img {
+		height: 25vh;
+		position: static;
+		margin: 0;
+		width: 100%;
+		overflow: hidden;
+	}
+	#map {
+		height: 25vh;
+		position: static;
+	}
+	#logo {display: none;}
+}
+
+@media screen and (max-width: 752px ) {
+
 }
 

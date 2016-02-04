@@ -16,4 +16,7 @@ class PagesController < ApplicationController
 
   def links
   end
+
+  def sitemap
+  end
 end
