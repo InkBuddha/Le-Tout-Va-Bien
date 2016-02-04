@@ -47,7 +47,7 @@ section {margin: 0; padding: 0;}
 
 body.homepage {
 	@include bg_size_cover;
-	background-image: url(agen.jpg);
+	background-image: image-url('agen.jpg');
 	background-color: #c68642;
 	background-repeat: no-repeat;
 	background-position: center center fixed;
